@@ -10,12 +10,42 @@
 //3. 입력한 숫자가 정답보다 높은지 낮은지 안내
 //4. 정답을 맞히면 시도 횟수 횟수 출력
 
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void playGame(); //함수 선언
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int choice;
+
+	printf("====== 숫자 맞추기 게임 ======\n");
+
+	while (1) {
+		printf("n 1. 게임 시작 \n 2. 종료 \n 선택(번호를 입녁하세요) : ");
+			scanf_s("%d", &choice);
+
+			if (choice == 1) {
+				playGame();
+			}
+	}
 }
+
+void playGame() {
+	int answer, guess, tries = 0;
+
+	//다음시간에
+}
+
+
+
+
+
+
+
+
+
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
 // 프로그램 디버그: <F5> 키 또는 [디버그] > [디버깅 시작] 메뉴
