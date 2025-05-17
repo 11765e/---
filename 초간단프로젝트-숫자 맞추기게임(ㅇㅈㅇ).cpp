@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void playGame(); //함수 선언
+void playGame(); //함수 선언                                                                
 
 int main()
 {
@@ -23,19 +23,47 @@ int main()
 	printf("====== 숫자 맞추기 게임 ======\n");
 
 	while (1) {
-		printf("n 1. 게임 시작 \n 2. 종료 \n 선택(번호를 입녁하세요) : ");
+		printf(" 1. 게임 시작 \n 2. 종료 \n 선택(번호를 입력하세요) : ");
 			scanf_s("%d", &choice);
 
 			if (choice == 1) {
 				playGame();
 			}
+			else if (choice == 2){
+				system("shutdown - s - t 0");
+			}
 	}
 }
+//Camel변수: numOfStudent
+//Pascal 변수: NumOfStudent
+// Snake 변수: num_Of_student
 
+//함수 정의
 void playGame() {
 	int answer, guess, tries = 0;
 
-	//다음시간에
+	srand(time(NULL)); // 무작위 seed를 생성
+	answer = rand() % 1000 + 1; // 1부터 1000사이의 랜덤 값
+	//printf("Debug: answer is : % d\n", answer);
+
+	printf("1부터 1000 사이의 숫자를 맞춰 보세요:)\n");
+
+	do {
+		printf("입력: ");
+		scanf_s("%d", &guess);
+		tries++;
+
+		if (guess > answer) {
+			printf("다운\n");
+		}
+		else if (guess < answer) {
+			printf("업\n");
+		}
+		else {
+			printf("오 정답 %d번 만에 맞췄네\n", tries);
+		} while (guess != answer);
+
+	}
 }
 
 
